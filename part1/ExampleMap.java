@@ -13,7 +13,19 @@ class ExampleMap
          Build a list of the names of students currently enrolled
          in a number of units strictly greater than the unitThreshold.
       */
-
+      for (Map.Entry<String, List<Course>> entry : courseListsByStudentName.entrySet()) 
+      {
+         List<Course> l = entry.getValue();
+         int sum = 0;
+         for (Course val : l) 
+         {
+            sum += val.getNumUnits();
+         }
+         if (sum > unitThreshold) 
+         {
+            overEnrolledStudents.add(entry.getKey());
+         }
+      }   
       return overEnrolledStudents;      
    }
 }
