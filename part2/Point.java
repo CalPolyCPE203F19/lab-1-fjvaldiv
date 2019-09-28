@@ -15,11 +15,12 @@ public class Point
       return (Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)));
    }
    public double getAngle() {
-      double val = Math.atan2(x, y);
+      double val = y/x; 
+      double amount = Math.atan(val);
       if (x < 0) {
-         val = val + Math.PI;
+         amount = amount + Math.PI;
       }
-      return val;
+      return amount;
    }
    public Point rotate90() {
       double newX = -y;
